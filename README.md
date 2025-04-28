@@ -22,4 +22,18 @@ Prerequisites
     Node.js (v18 or higher recommended)
 
     npm or yarn
+    
+Installation
 
+Clone the repository
+
+git clone https://github.com/your-username/task-manager-app.git](https://github.com/anuragsarma33/Bug-Tracker-App.git
+cd task-manager-app
+
+Install dependencies
+
+npm install
+
+Start the development server
+
+npm run dev
