@@ -1,0 +1,15 @@
+.chartWrapper {
+    padding: 1rem;
+    background: #ffffff;
+    border-width: 1px;
+    border-color: #e5e7eb;
+}
+
+.chartHeader {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.chartContent {
+    height: 16rem;
+}

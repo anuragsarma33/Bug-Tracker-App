@@ -1,0 +1,23 @@
+.formControl {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+.formControl input {
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  .searchInput {
+    min-width: 400px;
+  }
+
+  @media (max-width: 1024px) {
+    .searchInput {
+      min-width: 250px;
+      width: 100%;
+    }
+  }

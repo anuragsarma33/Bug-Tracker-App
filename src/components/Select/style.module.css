@@ -1,0 +1,13 @@
+.formControl {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+.formControl select {
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.125rem;
+  }
+
+  

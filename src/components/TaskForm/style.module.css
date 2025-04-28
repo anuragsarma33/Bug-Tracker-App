@@ -1,0 +1,68 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .formControl {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  .formControl select {
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.125rem;
+  }
+  
+  .textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .actionsWrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    background-color: #006efa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #006efa;
+  }
+  
+  .cancelButton {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .cancelButton:hover {
+    background-color: #5a6268;
+  }
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }

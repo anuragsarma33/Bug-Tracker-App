@@ -1,0 +1,16 @@
+.avatarWrapper {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.initials {
+    color: #4b5563;
+    font-weight: 500;
+}

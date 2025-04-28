@@ -1,0 +1,156 @@
+.taskItemWrapper {
+    border: 1px solid;
+    border-color: #e5e7eb;
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+}
+
+.badgeWrapper {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.priorityInfo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.75rem;
+}
+
+
+.default {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.primary {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+.secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.warning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.danger {
+    color: #991b1b;
+    background-color: #fee2e2;
+}
+
+.title {
+    color: #111827;
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.subTitle {
+    color: #4b5563;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.flexContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.marginBot1 {
+    margin-bottom: 1rem;
+}
+
+.actionBtnsWrapper {
+    padding-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    padding: 0.125rem 1.2rem;
+    border-radius: 6px;
+    min-height: 30px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.approveBtn {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.reopenBtn {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.editBtn {
+    background: #006efa;
+    color: #fff;
+}
+
+.deleteBtn {
+    background: #ef4444;
+    color: #fff;
+}
+
+.timeTracker {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .timeInput {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .logTimeBtn {
+    background-color: #0d6efd;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 30px;
+    font-size: 0.875rem;
+  }
+  
+  .logTimeBtn:hover {
+    background-color: #0b5ed7;
+  }
