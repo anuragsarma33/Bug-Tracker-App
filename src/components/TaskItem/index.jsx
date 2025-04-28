@@ -17,7 +17,7 @@ import {
   logTime,
   reopenTask,
 } from "../../reducers/tasks/tasksSlice";
-import { capitalizeString, formatDate } from "../../utils/utilitiy";
+import { capitalizeString, formatDate } from "../../utils/utilities";
 
 import { Badge } from "../Badge";
 import { TaskForm } from "../TaskForm";
@@ -28,6 +28,8 @@ import styles from "./style.module.css";
 const TaskItem = memo(({ task }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
+
+  const isRoleManager = user.role === "manager";
 
   const [showForm, setShowForm] = useState(false);
   const [timeInput, setTimeInput] = useState("");
@@ -96,13 +98,18 @@ const TaskItem = memo(({ task }) => {
         {task.category && <Badge>{task.category}</Badge>}
         <div>{formatDate(task.dueDate)}</div>
       </div>
-      <div className={styles.flexContent}>
-        <div>
-          <strong>Time Spent:</strong> {task.timeSpent || 0} hours
-        </div>
+      <div className={classNames(styles.flexContent, styles.marginBot1)}>
+        <strong>Time Spent:</strong>
+        <div>{task.timeSpent || 0} hours</div>
       </div>
+      {isRoleManager && (
+        <div className={classNames(styles.flexContent, styles.marginBot1)}>
+          <div>Assignee</div>
+          <div>{task.assignee}</div>
+        </div>
+      )}
       <div className={styles.actionBtnsWrapper}>
-        {user.role === "developer" && task.status !== "CLOSED" && (
+        {!isRoleManager && task.status !== "CLOSED" && (
           <div className={styles.timeTracker}>
             <input
               type="number"
@@ -121,7 +128,7 @@ const TaskItem = memo(({ task }) => {
             </button>
           </div>
         )}
-        {user.role === "manager" && task.status === "PENDING_APPROVAL" && (
+        {isRoleManager && task.status === "PENDING_APPROVAL" && (
           <button
             onClick={() => dispatch(approveTask(task.id))}
             type="button"
@@ -130,7 +137,7 @@ const TaskItem = memo(({ task }) => {
             Approve
           </button>
         )}
-        {user.role === "manager" && task.status === "CLOSED" && (
+        {isRoleManager && task.status === "CLOSED" && (
           <button
             onClick={() => dispatch(reopenTask(task.id))}
             type="button"
@@ -139,7 +146,7 @@ const TaskItem = memo(({ task }) => {
             Reopen
           </button>
         )}
-        {user.role === "developer" && (
+        {!isRoleManager && (
           <>
             <button
               type="button"

@@ -10,23 +10,28 @@ import { TaskForm } from "../../components/TaskForm";
 import styles from "./style.module.css";
 
 const TaskList = memo(() => {
-  const tasks = useSelector((state) => state.tasks.tasks);
+  const { tasks } = useSelector((state) => state.tasks);
 
   const { user } = useSelector((state) => state.auth);
+
+  const isRoleDeveloper = user.role === "developer";
+
+  const userTasks = isRoleDeveloper
+  ? tasks.filter((task) => task.assignee === user.username)
+  : tasks;
 
   const [showForm, setShowForm] = useState(false);
   const [filters, setFilters] = useState({
     priority: "ALL",
     status: "ALL",
+    assignee: "ALL",
     searchQuery: "",
   });
   const [sortBy, setSortBy] = useState("");
-  const [filteredTasks, setFilteredTasks] = useState(tasks);
-
-  const isRoleDeveloper = user.role === "developer";
+  const [filteredTasks, setFilteredTasks] = useState(userTasks);
 
   useEffect(() => {
-    let updatedTasks = [...tasks];
+    let updatedTasks = [...userTasks];
 
     if (filters.priority !== "ALL") {
       updatedTasks = updatedTasks.filter(
@@ -37,6 +42,12 @@ const TaskList = memo(() => {
     if (filters.status !== "ALL") {
       updatedTasks = updatedTasks.filter(
         (task) => task.status === filters.status
+      );
+    }
+
+    if (filters.assignee !== "ALL") {
+      updatedTasks = updatedTasks.filter(
+        (task) => task.assignee === filters.assignee
       );
     }
 
@@ -108,7 +119,7 @@ const TaskList = memo(() => {
   return (
     <main className={styles.mainContainer}>
       <div className={styles.header}>
-        <div className={styles.title}>My Tasks</div>
+        <div className={styles.title}>Tasks</div>
         {isRoleDeveloper && (
           <button
             className={styles.createBtn}
@@ -124,6 +135,8 @@ const TaskList = memo(() => {
         onFilterChange={handleFilterChange}
         onSortChange={handleSortChange}
         onSearch={handleSearch}
+        assigneeOptions={userTasks.map(task => ({key: task.assignee, value: task.assignee}))}
+        isRoleDeveloper={isRoleDeveloper}
       />
 
       {renderLists()}

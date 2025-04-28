@@ -30,14 +30,3 @@ export function capitalizeString(input) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 }
-
-export function comparePriority(aPriority, bPriority) {
-  const order = {
-    CRITICAL: 1,
-    HIGH: 2,
-    MEDIUM: 3,
-    LOW: 4,
-  };
-
-  return order[aPriority] - order[bPriority];
-}

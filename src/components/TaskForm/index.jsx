@@ -16,7 +16,7 @@ const TaskForm = memo(({ onCancel, task }) => {
     assignee: user.username,
     status: "OPEN",
   });
-
+  
   useEffect(() => {
     if (!task) return;
     setFormData(task);

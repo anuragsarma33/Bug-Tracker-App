@@ -7,7 +7,7 @@ import {
   PointElement,
 } from "chart.js";
 import { memo } from "react";
-import { formatDate } from "../../utils/utilitiy";
+import { formatDate } from "../../utils/utilities";
 import styles from "./styles.module.css";
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);

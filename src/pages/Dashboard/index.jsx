@@ -119,10 +119,7 @@ const Dashboard = memo(() => {
           <div className={styles.taskHeader}>
             <div className={styles.title}>Recent Tasks</div>
             {userTasks.length > 0 && (
-              <Link
-                to='/tasks'
-                className={styles.linkBtn}
-              >
+              <Link to="/tasks" className={styles.linkBtn}>
                 View All <ChevronRight size={16} />
               </Link>
             )}

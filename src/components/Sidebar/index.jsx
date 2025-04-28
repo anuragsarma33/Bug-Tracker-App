@@ -17,7 +17,7 @@ const Sidebar = memo(() => {
       icon: <Home size={20} />,
     },
     {
-      name: "My Tasks",
+      name: "Tasks",
       path: "/tasks",
       icon: <ListTodo size={20} />,
       showFor: ["developer", "manager"],
