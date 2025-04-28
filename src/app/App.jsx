@@ -5,7 +5,7 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import TaskList from '../pages/MyTasks';
 import { Navbar } from '../components/Navbar';
-import { Sidebar } from '../components/SideBar';
+import { Sidebar } from '../components/Sidebar';
 
 import styles from './styles.module.css';
 import './styles.css';
